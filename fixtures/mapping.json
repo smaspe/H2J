@@ -1,0 +1,15 @@
+{
+  "$": {
+    "root": "//div[@id='firehoselist']/article",
+    "type": "array"
+  },
+  "link": {
+    "$": {
+      "root": ".//h2[@class='story']//a",
+      "type": "object"
+    },
+    "title": "string(.)",
+    "href": "string(./@href)"
+  },
+  "content": "normalize-space(string(./div[@class='body']))"
+}
