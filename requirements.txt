@@ -3,3 +3,4 @@ lxml
 nose
 coverage
 codecov
+requests-mock

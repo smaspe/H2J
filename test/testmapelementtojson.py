@@ -4,16 +4,13 @@ from unittest import TestCase
 from lxml import html
 
 from html_to_json.html_to_json import map_element_to_json
-
+from test import file_to_string
 
 class TestMapElementToJson(TestCase):
-    def file_to_string(self, path):
-        with open(path) as f:
-            return f.read()
 
     def test_map_element_to_json(self):
         index = html.parse('fixtures/index.html')
-        mapping = json.loads(self.file_to_string('fixtures/mapping.json'))
+        mapping = json.loads(file_to_string('fixtures/mapping.json'))
         result = map_element_to_json(index, mapping)
         self.assertEqual(15, len(result), 'Wrong result size')
         self.assertEqual(
